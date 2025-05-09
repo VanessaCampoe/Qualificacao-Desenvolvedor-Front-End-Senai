@@ -14,5 +14,5 @@ Inicio
     // Imprimir o antecessor do número
     escreval("O antecessor de ", num1, " é ", num1 - 1))
 
-
+      escreval
 Fimalgoritmo
