@@ -1,0 +1,97 @@
+*{
+    padding: 0%;
+    margin: 0%;
+
+}
+/* procedimento iden{}*/
+@keyframes mudaCor{
+
+10%{
+    background-color: color-mix(in hsl shorter hue, color percentage, color percentage) ;
+
+}
+
+20%{
+    background-color: blueviolet;
+    
+
+}
+30%{
+    background-color: cadetblue ;
+
+}
+
+40%{
+    background-color: aliceblue;
+    margin-left: 10px;
+}
+50%{
+    background-color: wheat;
+
+}
+60%{
+    background-color: darkblue;
+
+}
+70%{
+    background-color: black ;
+
+}
+80%{
+    background-color: darkolivegreen ;
+    margin-left: 0px;
+}
+90%{
+    background-color: darkgreen  ;
+
+}
+100%{background-color: rgb(125, 73, 10) ;
+
+}
+}
+    
+#c1{
+    animation-name: mudaCor;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+
+
+
+
+
+.caixa{
+    width: 200px;   
+    height: 200px;
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
