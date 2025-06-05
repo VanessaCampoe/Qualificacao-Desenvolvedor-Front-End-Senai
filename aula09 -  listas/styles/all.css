@@ -1,0 +1,46 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.assunto{
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: aliceblue;
+}
+
+header{
+width: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 10px 0px;
+background-color: rgb;
+}
+
+ul{
+    display:flex ;
+    gap: 20px;
+    list-style: none;
+}
+
+#linkSobre:hover{
+    color:aquamarine
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: crimson;
+}
+
+#logo img{
+    width: 24px;
+}
+
+
+
+
