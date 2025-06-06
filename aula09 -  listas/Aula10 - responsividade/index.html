@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsividade</title>
+    <link rel="stylesheet" href="styles/all.css">
+    <link rel="stylesheet" href="styles/landscape.css" media="sreen and (orientation: landascape)">
+    <link rel="stylesheet" href="styles/portrait.css" media="sreen and (orientation: portrait )">
+</head>
+
+<body>
+    <header>
+        <div id="logo"></div>
+        <nav id="navPc"></nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Pag1</a></li>
+                <li><a href="index.html">Pag2</a></li>
+            </ul>
+        </nav>
+        <button onclick="menuMobile()">
+        <img src="imagens/menuIcon.svg" alt="">
+        </button>
+
+        </button>
+    </header>
+    
+    <main>
+        <picture>
+            <source media="(max-width:1000px)" srcset="imagens/mulherdancandoMenor.jpg">
+            <img src="imagens/mulherdancando.jpg" alt="mulher dançando">
+        </picture>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptates modi totam, quod dolorum magni
+            cumque molestias, error tempore consectetur sunt facere velit nihil. Quisquam, nulla ducimus! Rerum, est
+            voluptatum?</p>
+        </main>
+        <nav id="navMobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Pag1</a></li>
+                <li><a href="index.html">Pag2</a></li>
+            </ul>
+        </nav>
+
+
+</body>
+<script>
+    // procedimento noe()
+    // < =
+    //= == ===
+
+    function menuMobile(){
+        if(navMobile.style.display == "flex"){
+            navMobile.style.display = "none"
+            
+            }else{
+                    navMobile.style.display = "flex"
+                
+            }
+        }
+    
+</script>
+<!-- alt shif f para intendar e alt seta para mudar a linha de lugar  -->
+</html>
