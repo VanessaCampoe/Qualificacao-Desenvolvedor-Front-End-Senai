@@ -1,0 +1,17 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+.navbar{
+    background-color: rgb(163, 65, 255);
+}
+input{
+    transition: 1s!important;
+
+
+}
+input:focus{
+    transition: 1s!important;
+    background-color: darkgray!important;
+}
