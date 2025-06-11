@@ -1,0 +1,10 @@
+*{
+    margin: 0%;
+    padding: 0;
+}
+:root{
+    --corprimaria:blue;
+    --fontePrimaria: "verdana";
+    --tamanhoFonte: 14pt;
+    --PostTamanho:300px;
+}
