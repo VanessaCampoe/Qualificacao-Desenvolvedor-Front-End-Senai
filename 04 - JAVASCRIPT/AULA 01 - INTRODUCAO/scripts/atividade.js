@@ -19,3 +19,5 @@ calculo2 = n1 + 1  ;
 
 
 alert("A sequancia dos numeros é numero fornecido" +n1+  " seu antecessor " +calculo1+  " e seu sucessor " +calculo2+ ".");
+// "${} aqui ele vai desonsiderar a parte da string"
+// 
