@@ -62,7 +62,7 @@ function explicacao3(){
         default:
             alert("opcao invalida");
             explicacao3();
-            break
+            break 
     }
 
 // shift alt f identar 
