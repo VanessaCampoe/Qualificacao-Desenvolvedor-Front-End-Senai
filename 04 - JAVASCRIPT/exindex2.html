@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 1 - Abrir Endereço</title>
+</head>
+<body>
+
+  <h2>Digite o endereço:</h2>
+  <input type="text" id="endereco" placeholder="https://www.google.com">
+  <button onclick="abrirEndereco()">Ir</button>
+
+  <script>
+    function abrirEndereco() {
+      const url = document.getElementById('endereco').value;
+
+      if (url) {
+        window.open(url, '_blank'); // Abre em nova aba
+      } else {
+        alert("Por favor, digite um endereço!");
+      }
+    }
+  </script>
+
+</body>
+</html>

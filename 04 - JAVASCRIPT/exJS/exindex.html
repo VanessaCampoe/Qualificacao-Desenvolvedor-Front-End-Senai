@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios de JavaScript</title>
+</head>
+<body>
+
+  <h1>Exercícios de JavaScript</h1>
+
+  <!-- EXERCÍCIO 1 -->
+  <fieldset>
+    <legend>1) Acessar endereço digitado</legend>
+    <label for="endereco">Digite o endereço:</label>
+    <input type="text" id="endereco" placeholder="https://www.google.com">
+    <button onclick="abrirEndereco()">Ir</button>
+  </fieldset>
+
+  <!-- EXERCÍCIO 2 -->
+  <fieldset>
+    <legend>2) Escolher site para abrir</legend>
+    <label for="site">Escolha um site:</label>
+    <select id="site" onchange="abrirSite()">
+      <option value="">--Selecione--</option>
+      <option value="https://www.globo.com">Globo</option>
+      <option value="https://www.terra.com.br">Terra</option>
+      <option value="https://www.uol.com.br">UOL</option>
+    </select>
+  </fieldset>
+
+  <!-- EXERCÍCIO 3 -->
+  <fieldset>
+    <legend>3) Verificação de usuário e senha</legend>
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario"><br><br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha"><br><br>
+
+    <button onclick="verificarLogin()">Entrar</button>
+  </fieldset>
+
+  <!-- SCRIPTS JAVASCRIPT -->
+  <script>
+    // Ex. 1 - Abre o endereço digitado
+    function abrirEndereco() {
+      const url = document.getElementById('endereco').value;
+      if (url) {
+        window.open(url, '_blank');
+      } else {
+        alert("Digite um endereço válido!");
+      }
+    }
+
+    // Ex. 2 - Abre o site escolhido na lista
+    function abrirSite() {
+      const site = document.getElementById('site').value;
+      if (site) {
+        window.open(site, '_blank');
+      }
+    }
+
+    // Ex. 3 - Verifica se usuário e senha são SENAI
+    function verificarLogin() {
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+
+      if (usuario === "SENAI" && senha === "SENAI") {
+        alert("Usuário válido!");
+      } else {
+        alert("Usuário ou senha incorretos.");
+      }
+    }
+  </script>
+
+</body>
+</html>
