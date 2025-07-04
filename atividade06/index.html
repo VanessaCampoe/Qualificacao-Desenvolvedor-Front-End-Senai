@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle de Carro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Controle do Carro</h1>
+    <div class="dados">
+      <p><strong>Marca:Corolla</strong> <span id="marca"></span></p>
+      <p><strong>Modelo:</strong> <span id="modelo"></span></p>
+      <p><strong>Ano:2025</strong> <span id="ano"></span></p>
+      <p><strong>Cor:Branco</strong> <span id="cor"></span></p>
+      <p><strong>Velocidade Máxima:1.000km</strong> <span id="velMax"></span> km/h</p>
+      <p><strong>Velocidade Atual:1.000km</strong> <span id="velAtual"></span> km/h</p>
+    </div>
+
+    <div class="controles">
+      <input type="number" id="incremento" placeholder="Informe km/h" />
+      <button id="btnAcelerar">Acelerar</button>
+    </div>
+    <div class="controles">
+      <label for="slider">Incremento: <span id="valorSlider">0</span> km/h</label>
+      <input type="range" id="slider" min="0" max="100" value="0"/>
+      <button id="btnAcelerar">Acelerar</button>
+      <button id="btnFrear">Frear</button>
+      <button id="btnReset">Resetar</button>
+    </div>
+
+    <div id="mensagem" class="mensagem"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+// Objeto carro com métodos acelerar, frear e resetar
+const carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ano: 2022,
+  cor: "Prata",
+  velocidadeMaxima: 180,
+  velocidadeAtual: 0,
+
+  acelerar(incremento) {
+    if (typeof incremento !== "number" || incremento <= 0) {
+      return { erro: true, texto: "Valor inválido para acelerar." };
+    }
+    this.velocidadeAtual = Math.min(this.velocidadeAtual + incremento, this.velocidadeMaxima);
+    if (this.velocidadeAtual === this.velocidadeMaxima)
+      return { erro: false, texto: `Máxima atingida: ${this.velocidadeAtual} km/h.` };
+    return { erro: false, texto: `Velocidade atual: ${this.velocidadeAtual} km/h.` };
+  },
+
+  frear(decremento) {
+    if (typeof decremento !== "number" || decremento <= 0) {
+      return { erro: true, texto: "Valor inválido para frear." };
+    }
+    this.velocidadeAtual = Math.max(this.velocidadeAtual - decremento, 0);
+    return { erro: false, texto: `Freou para: ${this.velocidadeAtual} km/h.` };
+  },
+
+  resetar() {
+    this.velocidadeAtual = 0;
+    return { erro: false, texto: "Velocidade resetada para 0 km/h." };
+  }
+};
+
+// DOM
+const marcaEl = document.getElementById("marca"),
+      modeloEl = document.getElementById("modelo"),
+      anoEl = document.getElementById("ano"),
+      corEl = document.getElementById("cor"),
+      velMaxEl = document.getElementById("velMax"),
+      velAtualEl = document.getElementById("velAtual"),
+      incrementoEl = document.getElementById("incremento"),
+      mensagemEl = document.getElementById("mensagem");
+
+document.getElementById("btnAcelerar").addEventListener("click", () => {
+  const inc = parseFloat(incrementoEl.value);
+  const res = carro.acelerar(inc);
+  exibir(res);
+});
+document.getElementById("btnFrear").addEventListener("click", () => {
+  const dec = parseFloat(incrementoEl.value);
+  const res = carro.frear(dec);
+  exibir(res);
+});
+document.getElementById("btnReset").addEventListener("click", () => {
+  const res = carro.resetar();
+  exibir(res);
+});
+
+function atualizarDados() {
+  marcaEl.textContent = carro.marca;
+  modeloEl.textContent = carro.modelo;
+  anoEl.textContent = carro.ano;
+  corEl.textContent = carro.cor;
+  velMaxEl.textContent = carro.velocidadeMaxima;
+  velAtualEl.textContent = carro.velocidadeAtual;
+}
+function exibir({ erro, texto }) {
+  mensagemEl.textContent = texto;
+  mensagemEl.style.color = erro ? "#e74c3c" : "#2c3e50";
+  atualizarDados();
+}
+
+// Inicializa 
+atualizarDados();
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dados p {
+  margin: 8px 0;
+}
+
+.controles {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="number"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.mensagem {
+  margin-top: 10px;
+  color: #e74c3c;
+  text-align: center;
+}
