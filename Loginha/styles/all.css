@@ -1,0 +1,28 @@
+:root{
+    --escuro: rgb(20, 19, 19);
+    --claro: rgb(209, 206, 206); 
+    --primario:rgb(41, 41, 158);
+
+
+}
+/* site gradiente oi  para pegar o gradiente em sites  */
+/*  aqui fazr duas classes obrigatoria tema claro e tema escuro  */
+header{
+    border-bottom: 1px solid var(--primario)!important;
+}
+.temaClaro{
+    background-color: var(--claro)!important;
+    color: var(--escuro)!important;
+    transition: 1s;
+
+}
+.temaEscuro{
+    background-color: var(--escuro)!important;
+    color: var(--claro)!important;
+    transition: 1s;
+}
+.temaEscuro a{
+    
+    color: var(--claro)!important;
+   
+}
