@@ -1,86 +1,97 @@
-/* Estilo básico do corpo da página */
+/* Estilo geral do corpo */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Cabeçalho da página principal (Home) */
-  header.jumbotron {
-    background: linear-gradient(to right, #28a745, #218838); /* fundo verde */
-    color: white;
-    padding: 2rem;
-    margin-bottom: 0;
-  }
-  
-  /* Barra de navegação */
-  .navbar {
-    margin-bottom: 0;
-  }
-  
-  /* Espaço no botão do slide */
-  button.btn {
-    margin-top: 10px;
-  }
-  
-  /* Todas as imagens da página */
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Efeito ao passar o mouse na imagem */
-  img:hover {
-    transform: scale(1.02);
-  }
-  
-  /* Espaçamento entre as imagens da galeria */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Tema claro */
+body.temaClaro {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Tema escuro */
+body.temaEscuro {
+  background-color: #121212;
+  color: white;
+}
+
+/* Cabeçalho */
+header.jumbotron {
+  background: linear-gradient(to right, #28a745, #218838);
+  color: white;
+  padding: 2rem;
+  margin-bottom: 0;
+}
+
+/* Navbar */
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Botão de tema claro/escuro */
+#trocaTema {
+  font-size: 1.5rem;
+}
+
+/* Imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Colunas da galeria */
+.col-md-4 {
+  padding: 10px;
+}
+
+/* Títulos */
+h2, h3 {
+  color: #2d6a4f;
+}
+
+/* Parágrafos */
+p {
+  font-size: 1rem;
+}
+
+/* Rodapé */
+footer {
+  background-color: #343a40;
+  color: white;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
   .col-md-4 {
-    padding: 10px;
+    margin-bottom: 20px;
   }
-  
-  /* Estilo dos títulos */
-  h2, h3 {
-    color: #2d6a4f; /* verde escuro */
+
+  header.jumbotron h1 {
+    font-size: 1.8rem;
   }
-  
-  /* Estilo dos parágrafos */
-  p {
+
+  header.jumbotron p {
     font-size: 1rem;
   }
-  
-  /* Rodapé da página */
-  footer {
-    background-color: #343a40;
-    color: white;
-    font-size: 0.9rem;
-    padding: 1rem;
+
+  .navbar-nav {
+    text-align: center;
   }
-  
-  /* Estilo para celular e tablet */
-  @media (max-width: 768px) {
-    .col-md-4 {
-      margin-bottom: 20px;
-    }
-  
-    header.jumbotron h1 {
-      font-size: 1.8rem;
-    }
-  
-    header.jumbotron p {
-      font-size: 1rem;
-    }
-  
-    .navbar-nav {
-      text-align: center;
-    }
-  
-    img {
-      margin-bottom: 15px;
-    }
+
+  img {
+    margin-bottom: 15px;
   }
-  
+}
